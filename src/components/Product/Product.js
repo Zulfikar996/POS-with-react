@@ -16,6 +16,13 @@ class Product extends Component {
             .catch(console.log)
     }
 
+    inputProduct() {
+        axios
+            .post('localhost:4500/product')
+            .then(response => {
+                
+        })
+    }
 
 
     componentDidMount() {
