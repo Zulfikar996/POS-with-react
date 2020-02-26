@@ -8,14 +8,13 @@ import Modals from './components/Modals/Modals'
 function App() {
   return (
       <Router>
-                <div className='row'>
-                    <div className='content col-md-9' >
-                        <Navbar/>
+                <div className='row' >
+                    <div className='content col-md-9' style={{backgroundColor:'#d9d9d9'}} >
                         <Product/>
                     </div>
-                    <div className='cart col-md-3' style={{backgroundColor:'#404040', position:"fixed", right:0, top:0, bottom:0,}}>
+                    <div className='cart col-md-3 bg-dark' style={{position:"fixed", right:-20, top:0, bottom:0,}}>
                       <div className='upcart'>
-                        zululul
+                        <a style={{fontFamily:"Airbnb Cereal App"}}> zulul</a>
                       </div>
                       asdsa
                     </div>

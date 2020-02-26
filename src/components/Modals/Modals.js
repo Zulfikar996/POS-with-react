@@ -43,6 +43,7 @@ onSubmitHandler = (e)=>{
     .then(response=>{
         console.log('succes')
         alert('data masuk')
+        window.location.href="/"
     })
     .catch(error => {
         console.log(error)

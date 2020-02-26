@@ -1,19 +1,9 @@
-import React, {Component} from 'react'
-import axios from 'axios'
 
-class Navbar extends Component {
+import React, { Fragment } from 'react'
 
-
-    
-    onChangeHandler = (e)=>{
-        this.setState({
-            [e.target.name]:e.target.value
-        })
-    } 
-
-
-    render(){
+const Navbar = ({ searchByName, searchCategory }) => {
         return(
+            <Fragment>
             <nav className=" sticky-top navbar navbar-expand-lg navbar-dark bg-dark" >
                 <a className="navbar-brand">FamiRest</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,8 +20,8 @@ class Navbar extends Component {
                             </a>
                          
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="/category/food">Food</a>
-                            <a className="dropdown-item" href="/category/drink">Drink</a>
+                            <button onClick={searchCategory} className="dropdown-item" value={'Food'}>Food</button>
+                            <button onClick={searchCategory} className="dropdown-item" value={'Drink'} >Drink</button>
                         </div>
                         </li>
                     <button type="button" className="add btn btn-outline-light" data-toggle="modal" data-target="#exampleModalCenter" style={{backgroundColor:'transparent', border:'0px solid black'}}>
@@ -40,10 +30,14 @@ class Navbar extends Component {
                     </i>
                     </button>
                     </ul>
+                    <form className=" form-inline my-2 my-lg-0">
+                        <input onChange={searchByName} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button className="searchBtn btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
           </nav>
-        )
+            </Fragment>
+        );
     }
-}
 
-export default Navbar
+export default Navbar;
