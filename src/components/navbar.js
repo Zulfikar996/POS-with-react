@@ -1,7 +1,17 @@
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 class Navbar extends Component {
+
+
+    
+    onChangeHandler = (e)=>{
+        this.setState({
+            [e.target.name]:e.target.value
+        })
+    } 
+
+
     render(){
         return(
             <nav className=" sticky-top navbar navbar-expand-lg navbar-dark bg-dark" >
@@ -15,25 +25,21 @@ class Navbar extends Component {
                             <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Category
                             </a>
                          
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="#">Food</a>
-                            <a className="dropdown-item" href="#">Drink</a>
+                            <a className="dropdown-item" href="/category/food">Food</a>
+                            <a className="dropdown-item" href="/category/drink">Drink</a>
                         </div>
                         </li>
                     <button type="button" className="add btn btn-outline-light" data-toggle="modal" data-target="#exampleModalCenter" style={{backgroundColor:'transparent', border:'0px solid black'}}>
-                    <i class="material-icons">
+                    <i className="material-icons">
                         add_to_queue
                     </i>
                     </button>
                     </ul>
-                    <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                 </div>
           </nav>
         )
